@@ -1,16 +1,16 @@
 import prismaClient from "../../prisma";
 
 interface PagamentoRequest{
-    codigo: string;
+    id: string;
 }
 
 class ListarByPagamentosService
 {
-    async execute({codigo}:PagamentoRequest){
+    async execute({id}:PagamentoRequest){
 
         const findbyPagamento = await prismaClient.pagamentos.findMany({
             where:{
-                codigo: codigo
+                id: id
             }
         })
 

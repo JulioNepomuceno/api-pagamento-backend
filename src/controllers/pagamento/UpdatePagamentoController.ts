@@ -5,17 +5,17 @@ class UpdatePagamentoController{
 
     async handle(req: Request, res: Response){
 
-        const {id,codigo, nometipopagamento,descricao,status,nomepessoacadastro} = req.body;
+        const {id, nometipopagamento,descricao,status,nomepessoacadastro} = req.body;
 
         const updatePagamento = new UpdatePagamentoService();
 
         const pagamento = await updatePagamento.execute({
                 id,
-                codigo, 
                 nometipopagamento,
                 descricao,
                 status,
-                nomepessoacadastro
+                nomepessoacadastro,
+                
         })
 
         return res.json(pagamento);

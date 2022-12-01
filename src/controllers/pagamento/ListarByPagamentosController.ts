@@ -5,12 +5,12 @@ class ListarByPagamentosController{
 
     async handle(req: Request, res: Response){
 
-        const codigo = req.query.codigo as string;
+        const id = req.query.id as string;
 
         const listByPagamentos = new ListarByPagamentosService();
 
         const pagamento = await listByPagamentos.execute({
-            codigo
+            id
         })
 
         return res.json(pagamento);

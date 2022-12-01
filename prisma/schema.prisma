@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 model Pagamentos {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
   codigo String @db.VarChar(8)
   nometipopagamento String @db.VarChar(50)
   descricao String @db.VarChar(255)

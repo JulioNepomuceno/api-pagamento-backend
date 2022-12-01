@@ -14,7 +14,7 @@ class CreatePagamentoService{
     async execute({codigo, nometipopagamento,descricao,status,nomepessoacadastro}: PagamentoRequest){
 
         
-          //BBUSCAR SE EXISTE ALGUM CODIGO NA TALELA PAGAMENTO
+          //BUSCAR SE EXISTE ALGUM CODIGO NA TALELA PAGAMENTO
           const codigoexite = await prismaClient.pagamentos.findFirst({
               where:{
                   codigo: codigo
